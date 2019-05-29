@@ -49,6 +49,8 @@ class RecipesApiController extends Controller
             unset($recipe->items);
         }
 
+        $lackRecipes = $lackRecipes->sortBy('lackItemsCount');
+
         $response['results'] = $recipes;
         $response['lackRecipes'] = $lackRecipes;
 
